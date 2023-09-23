@@ -1,3 +1,9 @@
-@tailwind base;
+/* Define CSS classes for the dark mode styles in globals.css */
+
+.dark-mode {
+    /* Add your dark mode styles here */
+    background-color: #222;
+    color: #fff;
+  }@tailwind base;
 @tailwind components;
 @tailwind utilities;
