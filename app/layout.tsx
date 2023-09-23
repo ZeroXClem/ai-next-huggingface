@@ -14,23 +14,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="font-bold text-3xl dark:text-white flex flex-col items-center justify-center h-screen">
 
-  <div className="w-3/4 max-w-md p-8 rounded-lg shadow-xl bg-gray-900">
-
-   <div className="font-bold text-3xl dark:text-white">
-
-     Chat
-
-   </div>
+  <div className="w-3/4">
 
     {messages.length > 0 &&
 
       messages.map(m => (
 
-        <p key={m.id} className="break-words mb-2 text-white">
+        <p key={m.id} className="break-words mb-2">
 
-          {m.role === 'user' ? 'User: ' : 'AI: '} 
+          {m.role === 'user' ? 'User: ' : 'AI: '}
 
           {m.content}
 
@@ -40,27 +34,26 @@ export default function RootLayout({
 
     }
 
-     <form 
-       onSubmit={handleSubmit} 
-       className="mt-4">
-
-       <input  
-
-         className="p-4 w-full border border-gray-700 rounded-lg bg-gray-800 text-white"
-
-         value={input}
-
-         placeholder="Type a message..."
-
-         onChange={handleInputChange}
-
-       />
-
-     </form>
-
   </div>
 
+  <form onSubmit={handleSubmit} className="w-3/4">
+
+    <input
+
+      className="p-4 mt-8 border border-gray-700 rounded-lg w-full"
+
+      value={input}
+
+      placeholder="Ask a question..."
+
+      onChange={handleInputChange}
+
+    />
+
+  </form>
+
 </div>
+
   )
   }
 
