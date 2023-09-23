@@ -1,5 +1,25 @@
 'use client'
+// Create a state variable to track the dark mode state in Chat component (app/page.tsx)
 
+import { useState } from 'react';
+
+export default function Chat() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Rest of the component code...
+
+  // Toggle the dark mode state
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  return (
+    <div className={`flex flex-col w-full max-w-md py-24 mx-auto stretch ${darkMode ? 'dark-mode' : ''}`}>
+      {/* Rest of the component code */}
+      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+    </div>
+  );
+}
 import { useChat } from 'ai/react'
 
 export default function Chat() {
