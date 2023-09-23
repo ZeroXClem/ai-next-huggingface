@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 
-export default function Chat() {
+export default function ChatComponent() {
   const [darkMode, setDarkMode] = useState(false);
 
   // Rest of the component code...
